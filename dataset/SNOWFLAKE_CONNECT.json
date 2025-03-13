@@ -9,8 +9,8 @@
 		"type": "SnowflakeV2Table",
 		"schema": [],
 		"typeProperties": {
-			"schema": "",
-			"table": "products"
+			"schema": "JOB_PORTAL_PROJECT",
+			"table": "TRANSACTION"
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"

@@ -1,0 +1,234 @@
+{
+	"name": "pipeline1",
+	"properties": {
+		"activities": [
+			{
+				"name": "Copy data1",
+				"type": "Copy",
+				"dependsOn": [],
+				"policy": {
+					"timeout": "0.12:00:00",
+					"retry": 0,
+					"retryIntervalInSeconds": 30,
+					"secureOutput": false,
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"source": {
+						"type": "DelimitedTextSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "DelimitedTextReadSettings"
+						}
+					},
+					"sink": {
+						"type": "SnowflakeV2Sink",
+						"importSettings": {
+							"type": "SnowflakeImportCopyCommand"
+						}
+					},
+					"enableStaging": true,
+					"stagingSettings": {
+						"linkedServiceName": {
+							"referenceName": "AzureBlobStorage1",
+							"type": "LinkedServiceReference"
+						}
+					},
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "customer_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "CUSTOMER_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "product_id",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PRODUCT_ID",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "payment_month",
+									"type": "String"
+								},
+								"sink": {
+									"name": "PAYMENT_MONTH",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "revenue_type",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REVENUE_TYPE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "revenue",
+									"type": "String"
+								},
+								"sink": {
+									"name": "REVENUE",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "quantity",
+									"type": "String"
+								},
+								"sink": {
+									"name": "QUANTITY",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_1",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_1",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_2",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_2",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_3",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_3",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_4",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_4",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_5",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_5",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_6",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_6",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_7",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_7",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_8",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_8",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_9",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_9",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "dimension_10",
+									"type": "String"
+								},
+								"sink": {
+									"name": "DIMENSION_10",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"name": "companies",
+									"type": "String"
+								},
+								"sink": {
+									"name": "COMPANIES",
+									"type": "String"
+								}
+							}
+						]
+					}
+				},
+				"inputs": [
+					{
+						"referenceName": "DelimitedText1",
+						"type": "DatasetReference"
+					}
+				],
+				"outputs": [
+					{
+						"referenceName": "SNOWFLAKE_CONNECT",
+						"type": "DatasetReference"
+					}
+				]
+			}
+		],
+		"annotations": []
+	}
+}
