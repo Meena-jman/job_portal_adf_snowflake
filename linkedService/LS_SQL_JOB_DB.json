@@ -1,0 +1,21 @@
+{
+	"name": "LS_SQL_JOB_DB",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "SqlServer",
+		"typeProperties": {
+			"server": "JM-DKT-042",
+			"database": "job_portal_",
+			"encrypt": "optional",
+			"trustServerCertificate": true,
+			"authenticationType": "Windows",
+			"userName": "AzureAD\\MeenaK",
+			"encryptedCredential": "eyJDcmVkZW50aWFsSWQiOiIwNjU2ZWQwYi1kNDlhLTQ3ZjQtOGRiMy1iMDc1ZTZmNmQ5MDUiLCJWZXJzaW9uIjoiMi4wIiwiQ2xhc3NUeXBlIjoiTWljcm9zb2Z0LkRhdGFQcm94eS5Db3JlLkludGVyU2VydmljZURhdGFDb250cmFjdC5DcmVkZW50aWFsU1UwNkNZMTQifQ=="
+		},
+		"connectVia": {
+			"referenceName": "integrationRuntime-job-portal",
+			"type": "IntegrationRuntimeReference"
+		}
+	}
+}

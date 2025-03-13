@@ -1,0 +1,13 @@
+{
+	"name": "SQL_JOB1",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_SQL_JOB_DB",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

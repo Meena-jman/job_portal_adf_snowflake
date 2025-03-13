@@ -1,0 +1,6 @@
+{
+	"name": "integrationRuntime-job-portal",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}

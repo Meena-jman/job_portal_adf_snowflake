@@ -1,0 +1,9 @@
+{
+	"name": "datafactory-job-portal",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "a4e179b3-ecf0-44f6-8f2d-56db3c6abae1",
+		"tenantId": "2800c0a0-70e9-49be-8733-faeaa6aced99"
+	}
+}
