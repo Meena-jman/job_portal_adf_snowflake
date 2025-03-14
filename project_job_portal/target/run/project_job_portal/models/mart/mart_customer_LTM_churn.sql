@@ -1,0 +1,55 @@
+
+  
+    
+
+        create or replace transient table JOB_PORTAL.mart.mart_customer_LTM_churn
+         as
+        (WITH customer_year_churn_calculation
+AS(
+	SELECT
+		customer_id,
+		Revenue_type,
+		revenue,
+		payment_month,
+		MAX(payment_month) OVER(PARTITION BY customer_id ORDER BY payment_month DESC) AS last_payment_month
+	FROM
+		JOB_PORTAL.Intermediate.master_table
+	WHERE 
+		Revenue_type=TRUE
+),
+compare AS(
+	SELECT
+		*,
+		DATEDIFF(year,last_payment_month,'2020-01-05') AS Churn_year_period,
+		CASE 
+			WHEN 
+				DATEDIFF(year,last_payment_month,'2020-01-05')>1
+			THEN
+				'Customer_churn' 
+			ELSE
+				'Active_customer' 
+		END
+		 AS LTM_Churn
+	FROM 
+		customer_year_churn_calculation
+
+),
+final_year AS(
+	SELECT
+		
+		LTM_Churn,
+		SUM(revenue) AS LTM_Revenue,
+		COUNT(LTM_Churn)  AS LTM_Count
+	FROM
+		compare
+	GROUP BY
+		LTM_Churn
+		
+ )
+ SELECT 
+    *
+FROM
+    final_year
+        );
+      
+  

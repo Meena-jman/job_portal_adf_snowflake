@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: job_portal_source
+    database: job_portal
+    schema: raw
+    tables:
+      - name: CUSTOMERS
+        description: "This table contains customer data"
+      - name: PRODUCT
+        description: "This table contains product data"
+      - name: TRANSACTION1
+        description: "This table contains transaction data"
+      - name: REGION
+        description: "This table contains region data"
