@@ -27,6 +27,10 @@
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'AzureBlobStorage1'"
 		},
+		"LS_BLOB_STORE_REGION_sasUri": {
+			"type": "secureString",
+			"metadata": "Secure string for 'sasUri' of 'LS_BLOB_STORE_REGION'"
+		},
 		"LS_BLOB_TO_SNOWFLAKE_sasUri": {
 			"type": "secureString",
 			"metadata": "Secure string for 'sasUri' of 'LS_BLOB_TO_SNOWFLAKE'"
@@ -104,6 +108,9 @@
 					},
 					"AzureBlobStorage1_sasUri": {
 						"value": "[parameters('AzureBlobStorage1_sasUri')]"
+					},
+					"LS_BLOB_STORE_REGION_sasUri": {
+						"value": "[parameters('LS_BLOB_STORE_REGION_sasUri')]"
 					},
 					"LS_BLOB_TO_SNOWFLAKE_sasUri": {
 						"value": "[parameters('LS_BLOB_TO_SNOWFLAKE_sasUri')]"

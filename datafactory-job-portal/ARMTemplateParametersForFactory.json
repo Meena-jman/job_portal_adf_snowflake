@@ -20,6 +20,9 @@
 		"AzureBlobStorage1_sasUri": {
 			"value": ""
 		},
+		"LS_BLOB_STORE_REGION_sasUri": {
+			"value": ""
+		},
 		"LS_BLOB_TO_SNOWFLAKE_sasUri": {
 			"value": ""
 		},
