@@ -5,12 +5,20 @@
 			"referenceName": "LS_SNOWFLAKE_JOB",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tablename": {
+				"type": "String"
+			}
+		},
 		"annotations": [],
 		"type": "SnowflakeV2Table",
 		"schema": [],
 		"typeProperties": {
-			"schema": "JOB_PORTAL_PROJECT",
-			"table": "TRANSACTION"
+			"schema": "RAW",
+			"table": {
+				"value": "@dataset().tablename",
+				"type": "Expression"
+			}
 		}
 	},
 	"type": "Microsoft.DataFactory/factories/datasets"
